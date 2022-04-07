@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ItemsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('get/todolist', [ItemsController::class, 'getToDoList']);
+
+Route::post('update/item/description', [ItemsController::class, 'updateItemDescription']);
+
+Route::post('update/item/finished', [ItemsController::class, 'updateItemFinished']);
+
+Route::delete('delete/item/{id}', [ItemsController::class, 'destroy']);
+
+Route::post('create/item', [ItemsController::class, 'insert']);
