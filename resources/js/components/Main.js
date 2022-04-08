@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from './to_do_list/Table';
-import CreateModal from './to_do_list/modals/CreateModal';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Main() {
     return (
@@ -10,6 +11,17 @@ function Main() {
                     <Table/>
                 </div>
             </main>
+            <ToastContainer
+                position="top-left"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }

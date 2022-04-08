@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('item_description');
-            $table->string('file_path');
+            $table->string('file_name');
             $table->boolean('finished');
             $table->timestamps();
         });

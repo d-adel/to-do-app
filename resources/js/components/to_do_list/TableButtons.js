@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import UpdateModal from './modals/UpdateModal';
 import DeleteModal from './modals/DeleteModal';
+import {toast} from 'react-toastify';
 
 class TableButtons extends Component {
     constructor (props) {
@@ -15,6 +16,7 @@ class TableButtons extends Component {
             id : this.props.rowId,
             updateFinished : finished
         }).then(() => {
+            finished ? toast.success("Taak afgerond!") : toast.success("Afronden ongedaan gemaakt!");
             self.props.onChange();
         });
     }

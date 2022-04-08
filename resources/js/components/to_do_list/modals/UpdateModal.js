@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import {toast} from 'react-toastify'
 
 class UpdateModal extends Component {
     constructor(props) {
@@ -24,7 +25,9 @@ class UpdateModal extends Component {
             id : this.props.modalId,
             description : this.state.description,
         }).then(() => {
+            toast.success("Taak gewijzgd!");
             self.props.onChange();
+
         });
     }
 

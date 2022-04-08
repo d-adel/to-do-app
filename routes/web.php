@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('get/todolist', [ItemsController::class, 'getToDoList']);
 
+Route::get('get/item/{id}', [ItemsController::class, 'getItem']);
+
 Route::post('update/item/description', [ItemsController::class, 'updateItemDescription']);
 
 Route::post('update/item/finished', [ItemsController::class, 'updateItemFinished']);

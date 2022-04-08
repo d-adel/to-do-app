@@ -18,7 +18,7 @@ class ItemFactory extends Factory
     {
         return [
             'item_description' => $this->faker->word(),
-            'file_path' => 'dummy_path',
+            'file_name' => 'dummy_name',
             'finished' => $this->faker->boolean(),
         ];
     }

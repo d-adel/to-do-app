@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import {toast} from 'react-toastify';
 
 class CreateModal extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class CreateModal extends Component {
         fd.append("description", self.state.description);
         axios.post('/create/item', fd)
         .then(() => {
+            toast.success("Nieuwe taak aangemaakt!");
             self.props.onChange();
         });
     }

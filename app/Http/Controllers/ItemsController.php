@@ -8,6 +8,7 @@ use Log;
 use Exception;
 use App\Models\Item;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ItemsController extends Controller
 {
@@ -15,6 +16,15 @@ class ItemsController extends Controller
         try {
             $toDoList = Item::all();
             return response()->json($toDoList);
+        } catch(Exception $e) {
+            Log::error($e);
+        }
+    }
+
+    public function getItem(Request $request) {
+        try {
+            $item = Item::where('id', $request->get('id'))->get();
+            return responsse()->json($item);
         } catch(Exception $e) {
             Log::error($e);
         }
@@ -33,8 +43,9 @@ class ItemsController extends Controller
 
     public function updateItemFinished(Request $request) {
         try {
+            $finished = $request->get('updateFinished');
             Item::where('id', $request->get('id'))->update([
-                'finished' => $request->get('updateFinished')
+                'finished' => $finished
             ]);
             return response(200);
         } catch (Exception $e) {
@@ -57,10 +68,10 @@ class ItemsController extends Controller
             if ($request->hasFile('file')) {
                 $file= $request->file('file');
                 $filename= date('YmdHi').$file->getClientOriginalName();
-                $file-> move(public_path('public/Image'), $filename);
+                $file->storeAs('public/images',$filename);
             }
             DB::table('items')->insertGetId(
-                ['item_description' => $request->get('description'), 'finished' => 0, "file_path" => $filename]
+                ['item_description' => $request->get('description'), 'finished' => 0, "file_name" => $filename]
             );
             return response(200);
         } catch (Exception $e) {

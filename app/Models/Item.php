@@ -13,7 +13,7 @@ class Item extends Model
     protected $fillable = [
         'item_id',
         'item_description',
-        'file_path',
+        'file_name',
         'finished'
     ];
 }

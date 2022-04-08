@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import {toast} from 'react-toastify';
 
 class DeleteModal extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class DeleteModal extends Component {
         axios.delete('/delete/item/' + this.props.modalId, {
             id : this.props.modalId,
         }).then(() => {
-           self.props.onChange();
+            toast.success("Taak verwijderd!");
+            self.props.onChange();
         });
     }
 
