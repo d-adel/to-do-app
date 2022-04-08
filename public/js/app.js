@@ -6096,7 +6096,7 @@ var DeleteModal = /*#__PURE__*/function (_Component) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               className: "modal-body",
-              children: "Weet u zeker dat u deze item wilt verwijderen?"
+              children: "Weet u zeker dat u deze taak wilt verwijderen?"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "modal-footer",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {

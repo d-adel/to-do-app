@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import {toast} from 'react-toastify'
+import {toast} from 'react-toastify';
 
 class UpdateModal extends Component {
     constructor(props) {

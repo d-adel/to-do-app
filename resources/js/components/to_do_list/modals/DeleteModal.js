@@ -28,7 +28,7 @@ class DeleteModal extends Component {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            Weet u zeker dat u deze item wilt verwijderen?
+                            Weet u zeker dat u deze taak wilt verwijderen?
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
